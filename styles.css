@@ -150,3 +150,16 @@ row-gap: 9px;
     background-size: cover;
 
 }
+
+}
+.About{
+background-color: rgba(110, 13, 13, 0.795);
+width: 50%;
+position: relative;
+left: 25%;
+height: 1000px;
+border-radius: 15px;
+}
+.AboutBody{
+    height: 100%;
+}
