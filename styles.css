@@ -82,7 +82,7 @@ row-gap: 9px;
     .VideosBody{
         width: 100%;
         height: 100%;
-        background-image: url(/src/assets/images/Videos\ Background\ image.png);
+        background-image: url(https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Videos%20background%20image.png);
         background-repeat: no-repeat;
         background-size: cover;
     }
