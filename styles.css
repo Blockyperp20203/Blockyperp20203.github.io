@@ -8,8 +8,8 @@ button{
     position: relative;
     width: 200px;
     height: 100px;
-    top: 140px;
-    left: 250px;
+    top: 250px;
+    left: 245px;
     border-radius: 20px;
     background-color: rgb(131, 15, 15);
     color: rgb(255, 255, 255);
@@ -19,8 +19,8 @@ button{
     position: relative;
     width: 200px;
     height: 200px;
-    right: 500px;
-    top: 39px;
+    left: 800px;
+    bottom: 70px;
 }
 .Homepage{
     position: relative;
@@ -47,7 +47,7 @@ button{
     background-repeat: no-repeat;
     background-position: center bottom;
     background-attachment: fixed;
-    background-image: url(/src/assets/images/Wellcome.png);}
+    background-image: url(/Users/Blockyperp/Desktop/Stuff/Blockyperp\ Website/src/assets/images/Wellcome.png);}
     .Sub button{
         background-color: rgb(135, 3, 3);
         color: rgb(223, 223, 223);
@@ -82,7 +82,7 @@ row-gap: 9px;
     .VideosBody{
         width: 100%;
         height: 100%;
-        background-image: url(https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Videos%20background%20image.png);
+        background-image: url(/Users/Blockyperp/Desktop/Stuff/Blockyperp\ Website/src/assets/images/Videos\ Background\ image.png);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -94,7 +94,7 @@ row-gap: 9px;
     .PhotosBody {
         width: 100%;
         height: 100%;
-        background-image: url(/src/assets/images/Sunrise.png);
+        background-image: url(/Users/Blockyperp/Desktop/Stuff/Blockyperp\ Website/src/assets/images/Sunrise.png);
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -145,11 +145,9 @@ row-gap: 9px;
 .DownloadsBody{
     width: 100%;
     height: 100%;
-    background-image: url(https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Downloads%20Background.png);
+    background-image: url(/Users/Blockyperp/Desktop/Stuff/Blockyperp\ Website/src/assets/images/Downloads\ Background.png);
     background-repeat: no-repeat;
     background-size: cover;
-
-}
 
 }
 .About{
@@ -157,9 +155,30 @@ background-color: rgba(110, 13, 13, 0.795);
 width: 50%;
 position: relative;
 left: 25%;
-height: 1000px;
+top: 200px;
+height: 900px;
 border-radius: 15px;
 }
 .AboutBody{
     height: 100%;
+    background-image: url(/Users/Blockyperp/Desktop/Stuff/Blockyperp\ Website/src/assets/images/About\ Pic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.info{
+    position: relative;
+    left: 27%;
+    top: 15%;
+    width: 55%;
+    height: 55%;
+}
+
+.Links{
+    position: relative;
+    left: 33%;
+}
+.sdfghg{
+    width: 200px;
+    height: 200px;
 }
