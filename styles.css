@@ -1,64 +1,126 @@
- .Header{
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-color: rgb(8, 163, 163);
+/* Reset default margin/padding */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-button{
-    position: relative;
-    width: 200px;
-    height: 100px;
-    top: 250px;
-    left: 245px;
-    border-radius: 20px;
-    background-color: rgb(131, 15, 15);
-    color: rgb(255, 255, 255);
-    font-size: 30px;
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-image: url(https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Wellcome.png)
 }
-.BlockyperpPfp{
-    position: relative;
-    width: 200px;
-    height: 200px;
-    left: 800px;
-    bottom: 70px;
+
+/* Header Section */
+.Header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: aqua;
 }
-.Homepage{
-    position: relative;
-    left: 400px;
+
+.Header form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
 }
-.Homepage h1{
-    position: relative;
-    left: 200px;
-    font-size: 55px;
-    color: rgb(253, 253, 253);
+
+.Header button {
+    padding: 8px 12px;
+    border: none;
+    background: #c0392b;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
 }
-.Homepage p {
-    position: relative;
-    font-size: 30px;
+
+.Header button:hover {
+    background: #e74c3c;
+}
+
+.BlockyperpPfp {
+    max-width: 100px;
+    height: auto;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* Homepage text */
+.Homepage {
     text-align: center;
-    width: 700px;
-    left: 150px;
-    color: rgb(255, 255, 255);
+    padding: 20px;
 }
-.HomeBody{
+
+.Homepage h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.Homepage p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 1rem;
+}
+
+/* Subscribe Section */
+.Sub {
+    text-align: center;
+    padding: 20px;
+}
+
+.Sub button {
+    padding: 10px 16px;
+    font-size: 1rem;
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Sub button:hover {
+    background: #3498db;
+}
+
+.Sub iframe {
     width: 100%;
-    height: 100%;
-    background-size: 100% 67%;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-attachment: fixed;
-    background-image: url(https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Wellcome.png);}
-    .Sub button{
-        background-color: rgb(135, 3, 3);
-        color: rgb(223, 223, 223);
-        position: relative;
-        left: 1500px;
+    max-width: 560px;
+    height: 315px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+/* 🔥 Responsive Design 🔥 */
+@media (max-width: 768px) {
+    .Header {
+        flex-direction: column;
     }
-    .Sub iframe {
-        position: relative;
-        width: 500px;
-        height: 300px;
-        left: 1090px;
+
+    .Header form {
+        justify-content: center;
+    }
+
+    .Homepage h1 {
+        font-size: 1.5rem;
+    }
+
+    .Homepage p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .BlockyperpPfp {
+        max-width: 80px;
+    }
+}
+</style>
     } 
     .Videos{
         position: relative;
