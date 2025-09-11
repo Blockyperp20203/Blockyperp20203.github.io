@@ -19,6 +19,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    left: 0px; top: 0px;
     padding: 10px;
     background-color: aqua;
 }
