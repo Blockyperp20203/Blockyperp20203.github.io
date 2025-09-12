@@ -7,11 +7,15 @@
 :root{
 --bg:#fdfdfd;--text:#222;--nav:#20232a;--nav-text:#fff;
 --hero:linear-gradient(135deg,#667eea,#764ba2);
---btn:#ff4757;--btn-hover:#e84118;--section:#f0f0f0;--card:#fff}
+--btn:#ff4757;--btn-hover:#e84118;--section:#f0f0f0;--card:#fff;
+--link-bg:#00bcd4;--link-hover:#0097a7;
+}
 .dark-mode{
 --bg:#121212;--text:#f1f1f1;--nav:#1e1e1e;--nav-text:#f1f1f1;
 --hero:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
---btn:#00c6ff;--btn-hover:#0097a7;--section:#1b1b1b;--card:#222}
+--btn:#00c6ff;--btn-hover:#0097a7;--section:#1b1b1b;--card:#222;
+--link-bg:#ff6b81;--link-hover:#ff4757;
+}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
 body{background:var(--bg);color:var(--text);transition:.4s ease;line-height:1.6;overflow-x:hidden}
 .navbar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:1rem;background:var(--nav);color:var(--nav-text);animation:slideDown .8s ease}
@@ -19,24 +23,27 @@ body{background:var(--bg);color:var(--text);transition:.4s ease;line-height:1.6;
 .logo:hover{transform:scale(1.05) rotate(-2deg)}
 .logo img{width:2.2rem;height:2.2rem;border-radius:50%;animation:bounceIn 1s}
 nav{display:flex;flex-wrap:wrap;gap:.8rem;margin:.5rem 0}
-nav a{color:var(--nav-text);text-decoration:none;font-size:clamp(.85rem,2vw,.95rem);position:relative;transition:.3s}
-nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:#00bcd4;transition:.3s}
-nav a:hover{color:#00bcd4}nav a:hover::after{width:100%}
+nav a{padding:.5rem 1rem;background:var(--link-bg);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s;animation:pulse 2s infinite}
+nav a:hover{background:var(--link-hover);transform:scale(1.05) rotate(-1deg)}
 #darkToggle{background:none;border:none;font-size:clamp(1rem,2vw,1.3rem);cursor:pointer;color:var(--nav-text);transition:.4s}
 #darkToggle:active{transform:rotate(360deg) scale(1.2)}
 .hero{text-align:center;padding:clamp(2rem,6vw,5rem) 1rem;background:var(--hero);color:#fff;animation:fadeIn 1.2s ease}
 .hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem;animation:slideUp .9s ease}
 .hero p{font-size:clamp(1rem,2.5vw,1.3rem);max-width:60ch;margin:0 auto 1.5rem;animation:fadeIn .9s ease .3s both}
-.about-section{text-align:center;padding:clamp(2rem,5vw,3rem) 1rem;background:var(--section);transition:.3s;animation:fadeIn 1s ease .5s both;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
-.about-card{background:var(--card);padding:2rem;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,.15);max-width:900px;transition:.4s;animation:popIn 1s ease}
+.about-section{text-align:center;padding:clamp(2rem,5vw,3rem) 1rem;background:var(--section);transition:.3s;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.about-card{background:var(--card);padding:2rem;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,.15);max-width:900px;transition:.4s;animation:popIn 1s ease;display:flex;flex-direction:column;align-items:center;gap:1rem;overflow:hidden}
 .about-card img{width:150px;height:150px;border-radius:50%;margin-bottom:1rem;animation:bounceIn 1s}
 .about-card h2{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:.8rem}
-.about-card p{font-size:clamp(1rem,2.5vw,1.2rem);line-height:1.6;white-space:pre-line}
+.about-card .text-box{max-height:350px;overflow-y:auto;padding-right:10px;text-align:left;white-space:pre-line;line-height:1.5;border-left:3px solid var(--btn);padding-left:15px}
 .links{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1.5rem}
-.links a{padding:.6rem 1.2rem;background:var(--btn);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s;animation:pulse 2s infinite}
+.links a{padding:.6rem 1.2rem;background:var(--btn);color:#fff;border-radius:12px;text-decoration:none;font-weight:600;transition:.3s;animation:pulse 2s infinite}
 .links a:hover{background:var(--btn-hover);transform:scale(1.05) rotate(-1deg)}
 .footer{text-align:center;padding:1.5rem;background:var(--nav);color:var(--nav-text);font-size:.9rem;margin-top:2rem;animation:fadeIn 1.2s ease}
 .footer span{display:inline-block;animation:bounce 2s infinite}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--section)}
+::-webkit-scrollbar-thumb{background:var(--btn);border-radius:4px}
+.dark-mode ::-webkit-scrollbar-thumb{background:var(--btn-hover)}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes slideDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
@@ -50,56 +57,57 @@ nav a:hover{color:#00bcd4}nav a:hover::after{width:100%}
 <header class="navbar">
 <div class="logo"><img src="https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Blockyperp%20Profile%20Pic.png" alt="Blockyperps logo"><span>Blockyperps</span></div>
 <nav>
-<a href="index.html">Home</a><a href="Videos.html">Videos</a><a href="Photos.html">Photos</a><a href="Downloads.html">Downloads</a><a href="Projects.html">Projects</a><a href="About.html">About</a>
+<a href="index.html">🏠 Home</a><a href="Videos.html">🎬 Videos</a><a href="Photos.html">📸 Photos</a>
+<a href="Downloads.html">📥 Downloads</a><a href="Projects.html">🛠 Projects</a><a href="About.html">ℹ️ About</a>
 </nav>
 <button id="darkToggle">🌙</button>
 </header>
 
 <section class="hero">
-<h1>👋 About Blockyperps</h1>
-<p>Hi! I'm Blockyperp, a Tech & Minecraft YouTuber. Here's some info about me and my site.</p>
+<h1>👋 About Me!</h1>
+<p>Hi! I'm Blockyperp, a Tech & Minecraft YouTuber 🎮💻. Here's info about me and my site.</p>
 </section>
 
 <section class="about-section">
 <div class="about-card">
 <img src="https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Blockyperp%20Profile%20Pic.png" alt="Blockyperp">
-<h2>About Me</h2>
-<p>Hi iM Blockyperp A Tech Minecraft Youtuber Herez My Site That i Have Been Working 0N For 2 Yearz
-U Can Find Stuff Like Links To My Videos And Softwere Downloads And Much More!
-U Can Also join The Minecraft Server And Find World Downloads!
-How To Contact Me? With This Email Kontact.Blockyperp.Sept.20204@outlook.com
-0R join My Discord Server (Curently Closed) Due To Getting Raided Too Many Timez And Kinda Nuked!
-U Can Also Use Github Chat!
-0R Check Out My Reddit!
+<h2>About Blockyperp</h2>
+<div class="text-box">
+Hi iM Blockyperp 😎, a Tech & Minecraft YouTuber!  
 
-Rules And Privacy:
-Chat Rules:
-Be Nice To Every 1
-N0 C0RN G0R£ 0R ANY 0TH£R GR4PH1C C0NT£NT!
-N0 H4RR4$M£NT H4CK1NG M4LW£R£ 0R $C4MZ!
-N0 W4NK1NG!
-N0 D0XX1NG!
+Here you can find links to my videos 🎬, software downloads 📥, and Minecraft worlds 🌍.  
 
-Minecraft Server Rules:
-Be Nice To Every 1
-No H4XX1NG!
-No Greifing!
-N0 D0XX1NG!
+How to contact me:  
+📧 Email: Kontact.Blockyperp.Sept.20204@outlook.com  
+💬 Discord: Currently Closed (server got raided)  
+🐙 GitHub Chat & Reddit  
 
-Privacy Policy:
-IP Address (U CAN U$£ A VPN T0 $T0P THi$)
-We Can Also See Server Chat Logs
-But Thoze Get Cleared When The Server Restarts!
-Thatz ALL!
-And WE W0NT C0L£CT THi$ iNF0 iNL£$$ U D0 $UMTHiNG B4D!</p>
+Rules & Privacy:  
+- Be nice to everyone 😊  
+- No graphic content 🚫  
+- No harassment, hacking, malware, or scams ❌  
+- No wanking or doxxing ❌  
+
+Minecraft Server Rules:  
+- Be nice to everyone 😊  
+- No hacking ❌  
+- No griefing ❌  
+- No doxxing ❌  
+
+Privacy Policy:  
+- IP addresses may be logged (use VPN if you want)  
+- Server chat logs cleared on restart  
+- We won’t collect info unless you do something bad ⚠️
 </div>
+</div>
+
 <div class="links">
-<a href="http://youtube.com/@Blockyperp20203/videos">Youtube</a>
-<a href="https://github.com/Blockyperp20203">Github</a>
-<a href="https://odysee.com/@Blockyperp20203:5?view=content">Odysee</a>
-<a href="https://www.deviantart.com/blockyperp20203">Deviantart</a>
-<a href="http://vidlii.com/user/Blockyperp20203">Vidlii</a>
-<a href="https://discord.com/invite/CPXmarUwxX">Discord (Closed)</a>
+<a href="http://youtube.com/@Blockyperp20203/videos">🎬 Youtube</a>
+<a href="https://github.com/Blockyperp20203">🐙 Github</a>
+<a href="https://odysee.com/@Blockyperp20203:5?view=content">🎥 Odysee</a>
+<a href="https://www.deviantart.com/blockyperp20203">🖌 Deviantart</a>
+<a href="http://vidlii.com/user/Blockyperp20203">📺 Vidlii</a>
+<a href="https://discord.com/invite/CPXmarUwxX">💬 Discord (Closed)</a>
 </div>
 </section>
 
