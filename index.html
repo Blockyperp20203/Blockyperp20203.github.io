@@ -1,32 +1,53 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Blockyperps Download Center</title>
-    <link rel="stylesheet" href="styles.css">
-    
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Blockyperps Download Center</title>
+<style>
+:root{--bg:#fdfdfd;--text:#222;--nav:#20232a;--nav-text:#fff;--hero:linear-gradient(135deg,#667eea,#764ba2);--btn:#ff4757;--btn-hover:#e84118;--section:#f0f0f0;--card:#fff}
+.dark-mode{--bg:#121212;--text:#f1f1f1;--nav:#1e1e1e;--nav-text:#f1f1f1;--hero:linear-gradient(135deg,#0f2027,#203a43,#2c5364);--btn:#00c6ff;--btn-hover:#0097a7;--section:#1b1b1b;--card:#222}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:var(--bg);color:var(--text);transition:.3s;line-height:1.6}
+.navbar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:1rem;background:var(--nav);color:var(--nav-text)}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:600;font-size:clamp(1rem,2vw,1.2rem)}
+.logo img{width:2.2rem;height:2.2rem;border-radius:50%}
+nav{display:flex;flex-wrap:wrap;gap:.8rem;margin:.5rem 0}
+nav a{color:var(--nav-text);text-decoration:none;font-size:clamp(.85rem,2vw,.95rem);transition:.2s}
+nav a:hover{color:#00bcd4}
+#darkToggle{background:none;border:none;font-size:clamp(1rem,2vw,1.3rem);cursor:pointer;color:var(--nav-text);transition:.2s}
+#darkToggle:hover{transform:scale(1.15)}
+.hero{text-align:center;padding:clamp(2rem,6vw,5rem) 1rem;background:var(--hero);color:#fff}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);margin-bottom:1rem}
+.hero p{font-size:clamp(1rem,2.5vw,1.3rem);max-width:60ch;margin:0 auto 1.5rem}
+.btn{display:inline-block;padding:.8rem 1.5rem;background:var(--btn);color:#fff;border-radius:6px;text-decoration:none;font-weight:600;font-size:clamp(.9rem,2.5vw,1rem);transition:.3s}
+.btn:hover{background:var(--btn-hover)}
+.video-section{text-align:center;padding:clamp(2rem,5vw,3rem) 1rem;background:var(--section);transition:.3s}
+.video-section h2{font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:1rem}
+.video-container{position:relative;width:100%;max-width:900px;margin:auto;aspect-ratio:16/9}
+.video-container iframe{width:100%;height:100%;border-radius:8px;border:0}
+.footer{text-align:center;padding:1.5rem;background:var(--nav);color:var(--nav-text);font-size:.9rem;margin-top:2rem}
+</style>
 </head>
-<body class="HomeBody">
-    <div class="Header">
-        <form>
-            <button>Home</button>
-            <button formaction="Videos.html">Videos</button>
-            <button formaction="Photos.html">Photos</button>
-            <button formaction="Downloads.html">Downloads</button>
-            <button formaction="Projects.html">Projects</button>
-            <button formaction="About.html">About</button>
-        </form>
-        <img class="BlockyperpPfp" src="https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Blockyperp%20Profile%20Pic.png" alt="">
-    </div>
-    <div class="Homepage">
-        <h1>Wellcome To My Website</h1>
-        <p>Hi Wellcome To My Site Here u Can Find Cool And Useful Stuff Like Downloads And Cool Pix
-            Feel Free To Click on The Buttons And Check Them Out!
-        </p>
-    </div>
-    <div class="Sub">
-        <button formaction="https://youtube.com/@Blockyperp20203/videos">Subscribe</button>
-        <iframe src="https://www.youtube.com/embed/RyiEdHyrV0c" frameborder="0">Videos</iframe>
-    </div>
+<body>
+<header class="navbar">
+<div class="logo"><img src="https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Blockyperp%20Profile%20Pic.png" alt="Blockyperps logo"><span>Blockyperps</span></div>
+<nav>
+<a href="index.html">Home</a><a href="Videos.html">Videos</a><a href="Photos.html">Photos</a><a href="Downloads.html">Downloads</a><a href="Projects.html">Projects</a><a href="About.html">About</a>
+</nav>
+<button id="darkToggle">🌙</button>
+</header>
+<section class="hero">
+<h1>Welcome to My Website</h1>
+<p>Here you can find cool and useful stuff like downloads, videos, and awesome photos. Feel free to explore!</p>
+<a href="https://youtube.com/@Blockyperp20203/videos" class="btn">Subscribe on YouTube</a>
+</section>
+<section class="video-section">
+<h2>Featured Video</h2>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/RyiEdHyrV0c" allowfullscreen></iframe></div>
+</section>
+<footer class="footer">© 2025 Blockyperps · All Rights Reserved</footer>
+<script>
+const t=document.getElementById('darkToggle'),b=document.body;t.addEventListener('click',()=>{b.classList.toggle('dark-mode');t.textContent=b.classList.contains('dark-mode')?"☀️":"🌙"});
+</script>
 </body>
 </html>
