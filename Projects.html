@@ -1,20 +1,84 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Photos</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body class="PhotosBody">
-        <h1 class="Photosh1">L00K AT THEZE C00L PH0T0Z 0K?</h1>
-        <div class="Photos">
-            <img src="/Users/Blockyperp/Desktop/Stuff/Blockyperp Website/src/assets/images/Dog.JPG">
-            <img src="/Users/Blockyperp/Desktop/Stuff/Blockyperp Website/src/assets/images/Dog.JPG">
-            <img src="/Users/Blockyperp/Desktop/Stuff/Blockyperp Website/src/assets/images/Dog.JPG">
-            <img src="/Users/Blockyperp/Desktop/Stuff/Blockyperp Website/src/assets/images/Dog.JPG">
-            <img src="/Users/Blockyperp/Desktop/Stuff/Blockyperp Website/src/assets/images/Dog.JPG">
-            <img src="/Users/Blockyperp/Desktop/Stuff/Blockyperp Website/src/assets/images/Dog.JPG">
-            <img src="/Users/Blockyperp/Desktop/Stuff/Blockyperp Website/src/assets/images/Dog.JPG">
-            <img src="/Users/Blockyperp/Desktop/Stuff/Blockyperp Website/src/assets/images/Dog.JPG">
-        </div>
-    </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Blockyperps Projects</title>
+<style>
+:root{
+--bg:#fdfdfd;--text:#222;--nav:#20232a;--nav-text:#fff;
+--hero:linear-gradient(135deg,#667eea,#764ba2);
+--btn:#ff4757;--btn-hover:#e84118;--section:#f0f0f0;--card:#fff}
+.dark-mode{
+--bg:#121212;--text:#f1f1f1;--nav:#1e1e1e;--nav-text:#f1f1f1;
+--hero:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+--btn:#00c6ff;--btn-hover:#0097a7;--section:#1b1b1b;--card:#222}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:var(--bg);color:var(--text);transition:.4s ease;line-height:1.6;overflow-x:hidden}
+.navbar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:1rem;background:var(--nav);color:var(--nav-text);animation:slideDown .8s ease}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:600;font-size:clamp(1rem,2vw,1.2rem);cursor:pointer;transition:.3s}
+.logo:hover{transform:scale(1.05) rotate(-2deg)}
+.logo img{width:2.2rem;height:2.2rem;border-radius:50%;animation:bounceIn 1s}
+nav{display:flex;flex-wrap:wrap;gap:.8rem;margin:.5rem 0}
+nav a{color:var(--nav-text);text-decoration:none;font-size:clamp(.85rem,2vw,.95rem);position:relative;transition:.3s}
+nav a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:#00bcd4;transition:.3s}
+nav a:hover{color:#00bcd4}nav a:hover::after{width:100%}
+#darkToggle{background:none;border:none;font-size:clamp(1rem,2vw,1.3rem);cursor:pointer;color:var(--nav-text);transition:.4s}
+#darkToggle:active{transform:rotate(360deg) scale(1.2)}
+.hero{text-align:center;padding:clamp(2rem,6vw,5rem) 1rem;background:var(--hero);color:#fff;animation:fadeIn 1.2s ease}
+.hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem;animation:slideUp .9s ease}
+.hero p{font-size:clamp(1rem,2.5vw,1.3rem);max-width:60ch;margin:0 auto 1.5rem;animation:fadeIn .9s ease .3s both}
+.photo-section{text-align:center;padding:clamp(2rem,5vw,3rem) 1rem;background:var(--section);transition:.3s;animation:fadeIn 1s ease .5s both}
+.photo-section h2{font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:1rem;animation:slideUp .8s ease}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:1200px;margin:auto}
+.photo-container{position:relative;overflow:hidden;border-radius:12px;animation:popIn 1s ease;transition:.4s}
+.photo-container img{width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,.25);transition:.4s}
+.photo-container:hover{transform:translateY(-8px) scale(1.03)}
+.photo-container:hover img{box-shadow:0 12px 30px rgba(0,188,212,.5);transform:scale(1.08)}
+.footer{text-align:center;padding:1.5rem;background:var(--nav);color:var(--nav-text);font-size:.9rem;margin-top:2rem;animation:fadeIn 1.2s ease}
+.footer span{display:inline-block;animation:bounce 2s infinite}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounceIn{0%{transform:scale(0)}60%{transform:scale(1.1)}100%{transform:scale(1)}}
+@keyframes popIn{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+</style>
+</head>
+<body>
+<header class="navbar">
+<div class="logo"><img src="https://raw.githubusercontent.com/Blockyperp20203/Blockyperp20203.github.io/refs/heads/main/src/assets/images/Blockyperp%20Profile%20Pic.png" alt="Blockyperps logo"><span>Blockyperps Download Center</span></div>
+<nav>
+<a href="index.html">Home</a><a href="Videos.html">Videos</a><a href="Photos.html">Photos</a><a href="Downloads.html">Downloads</a><a href="Projects.html">Projects</a><a href="About.html">About</a>
+</nav>
+<button id="darkToggle">🌙</button>
+</header>
+
+<section class="hero">
+<h1>📸 Look AT These C00L Photos!</h1>
+<p>Here’s A Gallery 0F Awesome Pix. Hover Over Them For A Fun Effect!</p>
+</section>
+
+<section class="photo-section">
+<h2>Photo Gallery</h2>
+<div class="photo-grid">
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 1"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 2"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 3"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 4"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 5"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 6"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 7"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 8"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 9"></div>
+  <div class="photo-container"><img src="/src/assets/images/Dog.JPG" alt="Photo 10"></div>
+</div>
+</section>
+
+<footer class="footer">© 2025 Blockyperp inc · <span>All Rights Reserved</span></footer>
+
+<script>
+const t=document.getElementById('darkToggle'),b=document.body;
+t.addEventListener('click',()=>{b.classList.toggle('dark-mode');t.textContent=b.classList.contains('dark-mode')?"☀️":"🌙"});
+</script>
+</body>
 </html>
